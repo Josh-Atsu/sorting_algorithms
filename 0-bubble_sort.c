@@ -16,7 +16,7 @@ void bubble_sort(int *array, size_t size)
 	my_array = array;
 	for (k = 0; k < size; k++)
 	{
-		for (i = 0; i < size; i++)
+		for (i = 0; i < size - 1; i++)
 		{
 			n = my_array[i];
 			m = my_array[i + 1];
