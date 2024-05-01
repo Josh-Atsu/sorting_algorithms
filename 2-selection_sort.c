@@ -27,8 +27,11 @@ void selection_sort(int *array, size_t size)
 				small_idx = j;
 			}
 		}
-		my_array[curr_idx] = my_array[small_idx];
-		my_array[small_idx] = curr_value;
-		print_array(my_array, size);
+		if (my_array[small_idx] != my_array[i])
+		{
+			my_array[curr_idx] = my_array[small_idx];
+			my_array[small_idx] = curr_value;
+			print_array(my_array, size);
+		}
 	}
 }
