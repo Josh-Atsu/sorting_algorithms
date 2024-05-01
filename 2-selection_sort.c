@@ -11,25 +11,24 @@
 void selection_sort(int *array, size_t size)
 {
 	int *my_array;
-	size_t i, j, k = 0;
-	int sm_value, n1;
+	size_t i, j;
+	int curr_idx, curr_value, small_idx;
 
 	my_array = array;
-	sm_value = my_array[0];
 	for (i = 0; i < size; i++)
 	{
-		n1 = my_array[i];
-		sm_value = my_array[i];
+		curr_idx = i;
+		curr_value = my_array[i];
+		small_idx = i;
 		for (j = i + 1; j < size; j++)
 		{
-			if (my_array[j] < sm_value)
+			if (my_array[j] < my_array[small_idx])
 			{
-				k = j;
-				sm_value = my_array[k];
+				small_idx = j;
 			}
 		}
-		my_array[i] = sm_value;
-		my_array[k] = n1;
+		my_array[curr_idx] = my_array[small_idx];
+		my_array[small_idx] = curr_value;
 		print_array(my_array, size);
 	}
 }
