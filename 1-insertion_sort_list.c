@@ -24,7 +24,6 @@ void insertion_sort_list(listint_t **list)
 				node->next->prev = ptr;
 				ptr = ptr->prev;
 			}
-			
 		}
 	}
 }
