@@ -14,6 +14,8 @@ void counting_sort(int *array, size_t size)
 	int large_num, k, j;
 	size_t i;
 
+	if (array == NULL || size <= 1)
+		return;
 	large_num = array[0];
 	for (i = 0; i < size; i++)
 	{
