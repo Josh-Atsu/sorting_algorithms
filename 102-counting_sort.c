@@ -32,9 +32,8 @@ void counting_sort(int *array, size_t size)
 		k = array[i];
 		count[k] += 1;
 	}
-	j = 0;
 	i = 0;
-	while (j <= large_num)
+	for (j = 0; j <= large_num; j++)
 	{
 		k = j;
 		while (count[k] > 0)
@@ -48,7 +47,6 @@ void counting_sort(int *array, size_t size)
 			count[k]--;
 		}
 		count[j] += n;
-		j++;
 	}
 	print_array(count, large_num + 1);
 	free(count);
