@@ -11,7 +11,7 @@
 void counting_sort(int *array, size_t size)
 {
 	int *count;
-	int large_num, k, j;
+	int large_num, k, j, n = 0;
 	size_t i;
 
 	if (array == NULL || size <= 1)
@@ -45,9 +45,14 @@ void counting_sort(int *array, size_t size)
 			{
 				array[i] = j;
 				i++;
+				n += 1;
 			}
 			count[k]--;
 		}
+		count[j] += n;
 		j++;
 	}
+	printf(" the array\n");
+	print_array(count, large_num + 1);
+	free(count);
 }
